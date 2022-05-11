@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
+  devtool: 'eval-source-map',
+  //o devtool vai me fornecer o codigo original da aplicação e nao o arquivo dist intendivel.
   entry: path.resolve(__dirname, 'src', 'index.jsx'),
   //qual o arquivo inicial da aplicacao
   output: {
