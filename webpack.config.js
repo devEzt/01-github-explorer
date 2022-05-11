@@ -1,9 +1,11 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const isDevelopment = process.env.NODE_ENV !== 'production'
+
 module.exports = {
-  mode: 'development',
-  devtool: 'eval-source-map',
+  mode: isDevelopment ? 'development' : 'production',
+  devtool: isDevelopment ? 'eval-source-map' : 'source-map', // processo mais lento e com mais detalhes woEval
   //o devtool vai me fornecer o codigo original da aplicação e nao o arquivo dist intendivel.
   entry: path.resolve(__dirname, 'src', 'index.jsx'),
   //qual o arquivo inicial da aplicacao
