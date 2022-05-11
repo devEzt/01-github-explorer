@@ -14,6 +14,14 @@ module.exports = {
     extensions: ['.js', '.jsx'],
     //desse jeito estou vendo quais extensoes sao validas para leitura
   },
+  devServer: {
+    // contentBase: path.resolve(__dirname, 'public'),
+    // contentBase Webpack Version v4
+    static: {
+      directory: path.resolve(__dirname, 'public'),
+    },
+  },
+  //automatizar o processo de yarn webpack para que fique automatico e nao precise ficar dando o comand
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public', 'index.html'),
